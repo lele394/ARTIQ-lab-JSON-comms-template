@@ -42,8 +42,9 @@ def interact(data):
 ```
 
 ## Client.py
-
-### send_data
+Client.py contains the code to be run on the client machine. Connection and deconnection is performed at each data exchange to avoid hanging.
+### Doc
+#### send_data
 > Function used to send data to a server.
 - **json_data** : JSON data to send to the server.
 - **host='127.0.0.1'** : IP of the host machine of the server. Defaults to localhost for internal tests
@@ -66,7 +67,7 @@ if __name__ == "__main__":
    send_data(data, host='127.0.0.1', port=65432,)
 ```
 
-### server_success
+#### server_success
 > Function called when the server reports operation success.
 
 - **response_data** : JSON data returned by the server. Add your own code handling success here. No feedback inside the data, you can implement your own.
@@ -78,7 +79,7 @@ def server_success(response_data):
     print("Server reported success.")
 ```
 
-### server_fail
+#### server_fail
 > Function called when the server reports operation failure.
 
 - **response_data** : JSON data returned by the server. Add your own code handling failure here. No feedback inside the data, you can implement your own.
@@ -90,7 +91,7 @@ def server_fail(response_data):
     print('Server reported an error. {}'.format(response_data.get("error")))
 ```
 
-### fail_connect
+#### fail_connect
 > Function called when the server client cannot connect/contact the server.
 
 - *No parameters*
